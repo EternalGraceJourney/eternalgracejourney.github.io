@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eternal Grace Journey</title>
+<meta name="description" content="Faith, peace and legacy after 50 — a quiet place to draw near to God, remember His faithfulness, and keep the family stories only you can tell.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f8f6ef; --paper-2:#efece0; --card:#fffdf7;
+  --ink:#293c31; --olive:#586448; --muted:#6a7066;
+  --line:#deded1; --gold:#ac8b54; --gold-soft:#e9dcc2;
+  --display:"Libre Caslon Display",Georgia,serif;
+  --serif:"Libre Caslon Text",Georgia,serif;
+  --sans:"DM Sans",system-ui,sans-serif;
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;margin:0 0 .5em}
+.eyebrow{font-size:12px;letter-spacing:.24em;color:var(--gold);font-weight:600;text-transform:uppercase;margin:0 0 12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font:500 16px var(--sans);text-decoration:none;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--olive);border-color:var(--olive)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn.small{padding:9px 18px;font-size:15px}
+.link{background:none;border:0;padding:0;font:500 16px var(--sans);color:var(--olive);cursor:pointer;border-bottom:1px solid var(--gold);text-decoration:none;align-self:flex-start}
+.link:hover{color:var(--ink)}
+.verse{font-family:var(--serif);font-style:italic;color:var(--olive);font-size:18px}
+.verse cite{display:block;font-family:var(--sans);font-style:normal;font-size:12px;letter-spacing:.2em;color:var(--gold);margin-top:6px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(248,246,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand .cross{font-size:22px;color:var(--gold)}
+.brand b{font-family:var(--display);font-size:21px;font-weight:400;display:block;line-height:1.1}
+.brand small{font-size:10px;letter-spacing:.32em;color:var(--muted)}
+.nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;align-items:center}
+.nav ul a{text-decoration:none;font-size:15px;color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+.nav ul .btn{color:var(--paper)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font:500 14px var(--sans);color:var(--ink)}
+
+/* hero */
+.hero{padding:72px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.tag{display:inline-block;font-size:14px;color:var(--olive);background:var(--gold-soft);padding:6px 14px;border-radius:999px;margin-bottom:22px;text-decoration:none}
+.hero h1{font-size:clamp(40px,6vw,64px)}
+.poem{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--olive);margin:0 0 20px;line-height:1.7}
+.hero p.lead{color:var(--muted);max-width:30em}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 18px}
+.small-note{font-size:14px;color:var(--muted)}
+.hero-art{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px -25px rgba(41,60,49,.45)}
+.hero-art .verse{position:absolute;left:0;right:0;bottom:0;padding:26px 24px 20px;background:linear-gradient(transparent,rgba(248,246,239,.95) 45%);margin:0}
+
+/* ribbon */
+.ribbon{border-block:1px solid var(--line);background:var(--paper-2)}
+.ribbon .wrap{display:flex;justify-content:center;flex-wrap:wrap;gap:14px 26px;padding-block:16px;font-size:13px;letter-spacing:.2em;color:var(--olive);text-transform:uppercase}
+.ribbon span.star{color:var(--gold)}
+
+section{padding:88px 0}
+.center{text-align:center;max-width:640px;margin:0 auto 48px}
+.center h2{font-size:clamp(32px,4.5vw,44px)}
+.center p{color:var(--muted);margin:0}
+.rule{width:56px;height:1px;background:var(--gold);margin:16px auto 0;border:0}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;display:flex;flex-direction:column;transition:.25s}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px -24px rgba(41,60,49,.4)}
+.card .num{font-family:var(--display);font-size:34px;color:var(--gold);line-height:1}
+.card .kicker{font-size:12px;letter-spacing:.24em;color:var(--muted);margin:14px 0 4px;font-weight:600}
+.card h3{font-size:26px}
+.card p{color:var(--muted);flex:1;margin:0 0 22px}
+
+/* legacy */
+.legacy{background:var(--ink);color:var(--paper)}
+.legacy .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.book{aspect-ratio:3/4;max-width:340px;width:100%;margin:0 auto;border-radius:6px 16px 16px 6px;background:linear-gradient(135deg,#efe7d3,#d9caa6);color:var(--ink);padding:40px 32px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:-10px 0 0 -4px #b9a578,0 30px 60px -20px rgba(0,0,0,.5);position:relative}
+.book::before{content:"";position:absolute;inset:14px;border:1px solid rgba(172,139,84,.6);border-radius:4px 10px 10px 4px;pointer-events:none}
+.book .cross{color:var(--gold);font-size:26px;text-align:center}
+.book h3{font-size:30px;text-align:center;margin:0}
+.book p{font-size:14px;text-align:center;color:var(--olive);margin:0}
+.legacy .eyebrow{color:var(--gold-soft)}
+.legacy h2{font-size:clamp(32px,4.5vw,46px)}
+.legacy p{color:#d6dccf}
+.legacy ul{padding:0;list-style:none;margin:20px 0 28px}
+.legacy li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.1)}
+.legacy li::before{content:"✧";position:absolute;left:0;color:var(--gold)}
+.legacy .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.legacy .btn:hover{background:var(--gold-soft)}
+.legacy .verse{color:var(--gold-soft);margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15)}
+
+/* resources */
+.products{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.product{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.product .cover{height:200px;display:grid;place-items:center;font-family:var(--display);font-size:28px;color:var(--ink);text-align:center;padding:0 20px}
+.product .cover.a{background:linear-gradient(135deg,#e7ecdf,#c9d3bb)}
+.product .cover.b{background:linear-gradient(135deg,#f1e7d2,#dcc79e)}
+.product .body{padding:28px;display:flex;flex-direction:column;flex:1}
+.badge{align-self:flex-start;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:4px 12px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);margin-bottom:12px}
+.product h3{font-size:26px}
+.product p{color:var(--muted);flex:1}
+.price{font-size:14px;color:var(--muted);margin:0 0 16px}
+.price b{font-family:var(--display);font-size:26px;color:var(--ink);font-weight:400}
+.product .btn{align-self:flex-start}
+
+/* cta */
+.cta-box{background:var(--paper-2);border:1px solid var(--line);border-radius:28px;padding:64px 32px;text-align:center}
+.cta-box h2{font-size:clamp(30px,4vw,42px)}
+.cta-box p{color:var(--muted)}
+
+/* about / faq */
+.about .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:64px}
+.about p{color:var(--muted)}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;font-weight:500;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:24px;line-height:1;transition:.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:10px 0 0;font-size:16px}
+
+footer{border-top:1px solid var(--line);padding:40px 0;font-size:14px;color:var(--muted)}
+footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+footer nav{display:flex;gap:20px}
+footer .link{font-size:14px}
+footer .fine{margin-top:18px;font-size:13px}
+
+/* modals */
+dialog{border:0;border-radius:22px;padding:0;max-width:620px;width:calc(100% - 32px);background:var(--card);color:var(--ink);box-shadow:0 40px 80px -30px rgba(0,0,0,.45)}
+dialog::backdrop{background:rgba(41,60,49,.45);backdrop-filter:blur(3px)}
+.m{padding:40px 36px 32px;max-height:85vh;overflow:auto}
+.m h2{font-size:34px}
+.m p{color:var(--muted)}
+.close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:28px;line-height:1;color:var(--muted);cursor:pointer;padding:6px 10px}
+.close:hover{color:var(--ink)}
+.prayer{font-family:var(--serif);font-style:italic;background:var(--paper);border-left:3px solid var(--gold);padding:18px 20px;border-radius:0 12px 12px 0;color:var(--olive)!important}
+.timer{text-align:center;margin:28px 0}
+.ring{position:relative;width:180px;height:180px;margin:0 auto 18px}
+.ring svg{transform:rotate(-90deg)}
+.ring .time{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-size:44px}
+.breath{font-size:15px;color:var(--olive)!important;min-height:1.6em;font-style:italic}
+.row-btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+textarea{width:100%;min-height:160px;border:1px solid var(--line);border-radius:14px;padding:14px 16px;font:17px/1.7 var(--sans);background:var(--paper);color:var(--ink);resize:vertical}
+textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+label.lbl{font-size:14px;color:var(--muted);display:block;margin:18px 0 6px}
+.status{font-size:14px;color:var(--olive)!important;min-height:1.6em;margin:8px 0}
+.prompt-q{font-family:var(--serif);font-style:italic;font-size:23px;color:var(--ink)!important;margin:6px 0 0;line-height:1.45}
+.qs{list-style:none;padding:0;margin:24px 0;counter-reset:q}
+.qs li{display:grid;grid-template-columns:44px 1fr;gap:8px;padding:16px 0;border-bottom:1px dashed var(--line)}
+.qs li::before{counter-increment:q;content:"0" counter(q);font-family:var(--display);color:var(--gold);font-size:24px;line-height:1.2}
+.qs small{display:block;color:var(--muted);font-size:15px}
+.note-box{background:var(--gold-soft);border-radius:12px;padding:14px 18px;font-size:16px;color:var(--ink)!important}
+.write-lines{display:none}
+
+@media (max-width:860px){
+  .menu-btn{display:block}
+  .nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 20px 20px}
+  .nav ul.open{display:flex}
+  .nav ul li a{display:block;padding:12px 0}
+  .nav ul .btn{justify-content:center;margin-top:8px}
+  .hero{padding-top:40px}
+  .hero-grid,.legacy .grid,.about .grid,.products{grid-template-columns:1fr;gap:40px}
+  .cards{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .m{padding:36px 22px 26px}
+}
+
+@media print{
+  body.printing > *:not(#dlg-guide){display:none!important}
+  body.printing #dlg-guide{position:static;display:block;box-shadow:none;max-width:none;width:auto}
+  body.printing #dlg-guide .m{max-height:none;overflow:visible}
+  body.printing .close, body.printing .no-print{display:none!important}
+  body.printing .write-lines{display:block;height:90px;border-bottom:1px solid #ccc;margin-top:6px}
+  body.printing .qs li{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Eternal Grace Journey home">
+      <span class="cross" aria-hidden="true">✝</span>
+      <span><b>Eternal Grace Journey</b><small>FAITH · FAMILY · LEGACY</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navList">Menu</button>
+    <ul id="navList">
+      <li><a href="#moments">Quiet moments</a></li>
+      <li><a href="#legacy">Your legacy</a></li>
+      <li><a href="#resources">Journals</a></li>
+      <li><a href="#about">Our heart</a></li>
+      <li><a class="btn small" href="#guide">Free guide →</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <a class="tag" href="#guide">Small steps of faith, a legacy that lasts →</a>
+        <h1>Faith, peace &amp; legacy after fifty</h1>
+        <p class="poem">Grounded in faith.<br>Held by grace.<br>Remembered in love.</p>
+        <p class="lead">A quiet corner to draw near to God, look back on His faithfulness, and keep the stories only you can tell.</p>
+        <div class="actions">
+          <a class="btn" href="#guide">Start your faith story →</a>
+          <button class="btn ghost" data-open="dlg-quiet">Take a quiet minute</button>
+        </div>
+        <p class="small-note">Begin small: one prayer, one memory, one page that matters.</p>
+      </div>
+      <figure class="hero-art" style="margin:0">
+        <!-- Original illustration: morning lake -->
+        <svg viewBox="0 0 600 640" role="img" aria-label="A still lake at dawn reflecting distant hills under a soft sky">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#e9e4d2"/><stop offset=".55" stop-color="#f4e6c8"/><stop offset="1" stop-color="#f8efd9"/>
+            </linearGradient>
+            <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#c9d3c0"/><stop offset="1" stop-color="#93a58f"/>
+            </linearGradient>
+            <radialGradient id="sun" cx=".5" cy=".5" r=".5">
+              <stop offset="0" stop-color="#fff6e0"/><stop offset="1" stop-color="#fff6e0" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="600" height="640" fill="url(#sky)"/>
+          <circle cx="380" cy="250" r="140" fill="url(#sun)"/>
+          <circle cx="380" cy="262" r="30" fill="#fbf1d8"/>
+          <path d="M0 330 L90 240 L160 290 L250 190 L340 280 L420 225 L520 300 L600 260 L600 360 L0 360Z" fill="#a9b59c"/>
+          <path d="M0 350 L70 300 L150 335 L230 280 L320 340 L410 300 L500 345 L600 310 L600 370 L0 370Z" fill="#7f8f74"/>
+          <rect y="365" width="600" height="275" fill="url(#lake)"/>
+          <g opacity=".35">
+            <path d="M0 365 L70 410 L150 380 L230 440 L320 375 L410 415 L500 380 L600 405 L600 365Z" fill="#6f8066"/>
+          </g>
+          <ellipse cx="380" cy="420" rx="60" ry="5" fill="#fbf1d8" opacity=".7"/>
+          <ellipse cx="380" cy="440" rx="40" ry="3" fill="#fbf1d8" opacity=".5"/>
+          <ellipse cx="380" cy="458" rx="24" ry="2" fill="#fbf1d8" opacity=".4"/>
+          <g stroke="#f8f6ef" stroke-width="1.5" opacity=".5"><line x1="60" y1="500" x2="160" y2="500"/><line x1="420" y1="540" x2="540" y2="540"/><line x1="200" y1="580" x2="280" y2="580"/></g>
+        </svg>
+        <blockquote class="verse">“Be still, and know that I am God.”<cite>PSALM 46:10 · KJV</cite></blockquote>
+      </figure>
+    </div>
+  </section>
+
+  <div class="ribbon" aria-hidden="true">
+    <div class="wrap">
+      <span>Scripture &amp; prayer</span><span class="star">✧</span>
+      <span>Purpose in every season</span><span class="star">✧</span>
+      <span>Stories worth keeping</span><span class="star">✧</span>
+      <span>Faith for those who follow</span>
+    </div>
+  </div>
+
+  <!-- MOMENTS -->
+  <section id="moments">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow">Come as you are</p>
+        <h2>A little room for your soul</h2>
+        <p>Three gentle ways to begin, whenever you have a moment.</p>
+        <hr class="rule">
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="num">01</span>
+          <p class="kicker">PAUSE</p>
+          <h3>A minute with God</h3>
+          <p>Set down what you're carrying. Sixty quiet seconds to breathe, pray, and bring your cares to Jesus.</p>
+          <button class="link" data-open="dlg-quiet">Begin a one-minute pause →</button>
+        </article>
+        <article class="card">
+          <span class="num">02</span>
+          <p class="kicker">REMEMBER</p>
+          <h3>Grace in ordinary days</h3>
+          <p>Recall one person, one kindness, or one answered prayer. A new question waits for you each day.</p>
+          <button class="link" data-open="dlg-reflect">Answer today's question →</button>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <p class="kicker">SHARE</p>
+          <h3>One story for your family</h3>
+          <p>You don't need to write a book. A single story, told well, is a wonderful place to start.</p>
+          <a class="link" href="#guide">See five story prompts →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEGACY -->
+  <section id="legacy" class="legacy">
+    <div class="wrap grid">
+      <div class="book" aria-label="Illustrative cover of the free guide">
+        <div class="cross">✝</div>
+        <div>
+          <h3>Five Faith Stories Your Family Should Hear</h3>
+          <p style="margin-top:14px">A gentle reflection guide<br>for a lasting legacy</p>
+        </div>
+        <p style="letter-spacing:.3em;font-size:11px">ETERNAL GRACE JOURNEY</p>
+      </div>
+      <div>
+        <p class="eyebrow">Your life holds a story</p>
+        <h2>The memories you carry are a gift</h2>
+        <p>Some of the most precious things we leave behind can't be wrapped or inherited. They're remembered.</p>
+        <ul>
+          <li>Five gentle prompts — answer one at a time</li>
+          <li>An easy way to start a conversation with family</li>
+          <li>No writing experience needed</li>
+        </ul>
+        <a class="btn" href="#guide">Open the free guide →</a>
+        <p class="small-note" style="color:#b8c2b3;margin-top:14px">Read it online or print it. No email needed for this first edition.</p>
+        <blockquote class="verse">“One generation shall praise thy works to another, and shall declare thy mighty acts.”<cite>PSALM 145:4 · KJV</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section id="resources">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow">Resources for the journey</p>
+        <h2>Companions for the road</h2>
+        <p>Printed journals to help you make room for what matters most.</p>
+        <hr class="rule">
+      </div>
+      <div class="products">
+        <article class="product">
+          <div class="cover a">My Faith,<br>My Legacy</div>
+          <div class="body">
+            <span class="badge">Coming soon</span>
+            <h3>The guided journal</h3>
+            <p>From where your faith began to the words you'd like to pass on — a journal that walks beside you, one page at a time.</p>
+            <p class="price">Planned price <b>$19</b> USD</p>
+            <button class="btn ghost small" data-open="dlg-journal">Look inside →</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="cover b">Made just<br>for you</div>
+          <div class="body">
+            <span class="badge">Coming soon</span>
+            <h3>The personalized edition</h3>
+            <p>Your name on the cover, a dedication page for your family, and prompts shaped around your own life.</p>
+            <p class="price">Planned price <b>$39</b> USD</p>
+            <button class="btn ghost small" data-open="dlg-custom">See what's personalized →</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-box">
+        <p class="eyebrow">A gentle beginning</p>
+        <h2>Read five faith reflection prompts today</h2>
+        <p>Free to read. Free to print.</p>
+        <div class="actions" style="justify-content:center"><a class="btn" href="#guide">Open the free reflection guide →</a></div>
+        <p class="small-note">A weekly email devotional is in the works — sign-ups aren't open yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about" style="padding-top:24px">
+    <div class="wrap grid">
+      <div>
+        <p class="eyebrow">Our heart</p>
+        <h2 style="font-size:clamp(32px,4.5vw,42px)">Why Eternal Grace Journey exists</h2>
+        <p>We believe the second half of life isn't a closing chapter — it's a season of harvest and handing on. Eternal Grace Journey offers Christian encouragement, room for quiet reflection, and a simple way to tell the people you love what God has done in your life.</p>
+        <blockquote class="verse" style="margin-top:28px">“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”<cite>MATTHEW 11:28 · KJV</cite></blockquote>
+      </div>
+      <div>
+        <details open>
+          <summary>Is this only for people over fifty?</summary>
+          <p>Not at all. It's written with older adults in mind, but grown children who want to capture a parent's stories are just as welcome.</p>
+        </details>
+        <details>
+          <summary>How should I use the free guide?</summary>
+          <p>Pick one question. Write in a notebook, talk it through with a grandchild, or print the guide. You never need to answer them all.</p>
+        </details>
+        <details>
+          <summary>Can I buy a journal here?</summary>
+          <p>Not yet. The journals are still being prepared, and this site doesn't take any payments.</p>
+        </details>
+        <details>
+          <summary>Where are my reflections saved?</summary>
+          <p>Only in this browser, and only when you tap “Save on this device.” Nothing is sent to us. Anyone using this browser could see it, so you can export or delete it any time.</p>
+        </details>
+        <details>
+          <summary>Can I get weekly encouragement by email?</summary>
+          <p>Not yet — we're working on it and will share here when it opens.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <span><span style="color:var(--gold)">✝</span> Eternal Grace Journey</span>
+      <nav>
+        <button class="link" data-open="dlg-privacy">Privacy</button>
+        <a class="link" href="#about">About this space</a>
+      </nav>
+    </div>
+    <p class="fine">© 2026 Eternal Grace Journey · Faith • Grace • Family • Legacy<br>Original reflection prompts. Scripture quoted from the King James Version. Cover artwork is illustrative.</p>
+  </div>
+</footer>
+
+<!-- ============ DIALOGS ============ -->
+<dialog id="dlg-quiet" aria-labelledby="t-quiet">
+  <button class="close" data-close aria-label="Close">×</button>
+  <div class="m">
+    <p class="eyebrow">01 · Pause</p>
+    <h2 id="t-quiet">A quiet minute</h2>
+    <p class="prayer">Lord Jesus, meet me right here, in this ordinary moment. I place my worries in Your hands. Quiet my heart, and help me remember that You are always near. Amen.</p>
+    <div class="timer">
+      <div class="ring">
+        <svg viewBox="0 0 180 180" width="180" height="180">
+          <circle cx="90" cy="90" r="80" fill="none" stroke="var(--line)" stroke-width="6"/>
+          <circle id="ringBar" cx="90" cy="90" r="80" fill="none" stroke="var(--gold)" stroke-width="6" stroke-linecap="round" stroke-dasharray="502.65" stroke-dashoffset="0"/>
+        </svg>
+        <div class="time" id="timeText">1:00</div>
+      </div>
+      <p class="breath" id="breath" aria-live="polite">Whenever you're ready, press begin.</p>
+      <div class="row-btns">
+        <button class="btn" id="timerToggle">Begin quiet minute</button>
+        <button class="btn ghost" id="timerReset">Start over</button>
+      </div>
+    </div>
+    <p class="small-note" style="text-align:center">The timer is silent. Pause or close whenever you like.</p>
+  </div>
+</dialog>
+
+<dialog id="dlg-reflect" aria-labelledby="t-reflect">
+  <button class="close" data-close aria-label="Close">×</button>
+  <div class="m">
+    <p class="eyebrow">02 · Remember</p>
+    <h2 id="t-reflect">Remember His faithfulness</h2>
+    <p style="margin:0">Today's question</p>
+    <p class="prompt-q" id="todayQ"></p>
+    <label class="lbl" for="reflectText">Your reflection — optional</label>
+    <textarea id="reflectText" placeholder="Take your time. A few sentences is plenty…"></textarea>
+    <p class="status" id="reflectStatus" aria-live="polite"></p>
+    <div class="row-btns" style="justify-content:flex-start">
+      <button class="btn small" id="saveBtn">Save on this device</button>
+      <button class="btn ghost small" id="exportBtn">Export as text</button>
+      <button class="btn ghost small" id="deleteBtn">Delete saved reflection</button>
+    </div>
+    <p class="small-note" style="margin-top:16px">If saved, it stays private to this browser. It is never sent to Eternal Grace Journey or anyone else.</p>
+  </div>
+</dialog>
+
+<dialog id="dlg-guide" aria-labelledby="t-guide">
+  <button class="close" data-close aria-label="Close">×</button>
+  <div class="m">
+    <p class="eyebrow">Your free reflection guide</p>
+    <h2 id="t-guide">Five Faith Stories Your Family Should Hear</h2>
+    <p>Choose just one. Write it in a notebook, tell it over dinner, or record it as a voice memo.</p>
+    <ol class="qs">
+      <li><div>Who first helped you understand God's love? What do you remember most about them?<div class="write-lines"></div></div></li>
+      <li><div>What hard season taught you to trust God more deeply?<small>Share only what feels comfortable.</small><div class="write-lines"></div></div></li>
+      <li><div>Which prayer has stayed with you — answered, unanswered, or still unfolding?<div class="write-lines"></div></div></li>
+      <li><div>What family memory reminds you that God has been faithful?<div class="write-lines"></div></div></li>
+      <li><div>What do you most hope the next generation will know about your faith?<div class="write-lines"></div></div></li>
+    </ol>
+    <p class="note-box"><b>A conversation starter:</b> “Can I tell you about something that happened when I was about your age?”</p>
+    <div class="row-btns no-print" style="justify-content:flex-start;margin-top:22px">
+      <button class="btn" id="printBtn">Print / save as PDF →</button>
+    </div>
+    <p class="small-note no-print">Opens your browser's print dialog — choose “Save as PDF” to keep a copy.</p>
+  </div>
+</dialog>
+
+<dialog id="dlg-journal" aria-labelledby="t-journal">
+  <button class="close" data-close aria-label="Close">×</button>
+  <div class="m">
+    <p class="eyebrow">Coming soon · Planned $19 USD</p>
+    <h2 id="t-journal">My Faith, My Legacy</h2>
+    <p>A guided journal in six parts, written to be filled in slowly:</p>
+    <ol class="qs">
+      <li><div>Where faith began<small>How you first came to know God</small></div></li>
+      <li><div>Turning points<small>The moments that changed your direction</small></div></li>
+      <li><div>Family memories<small>Kitchen tables, road trips and holidays</small></div></li>
+      <li><div>A life of prayer<small>What you asked for, and what you waited on</small></div></li>
+      <li><div>Gratitude<small>The grace you noticed along the way</small></div></li>
+      <li><div>Words for those who follow<small>What you want your children and grandchildren to carry</small></div></li>
+    </ol>
+    <p class="note-box">Sample prompt: “Tell about a time when love or forgiveness changed a relationship in your life.”</p>
+    <p class="small-note">Not available to purchase yet. No payment is collected on this site.</p>
+    <a class="btn" href="#guide">Try the free guide first →</a>
+  </div>
+</dialog>
+
+<dialog id="dlg-custom" aria-labelledby="t-custom">
+  <button class="close" data-close aria-label="Close">×</button>
+  <div class="m">
+    <p class="eyebrow">Coming soon · Planned $39 USD</p>
+    <h2 id="t-custom">Make it yours.</h2>
+    <p>Everything in the guided journal, plus:</p>
+    <ul style="color:var(--muted);padding-left:1.2em">
+      <li>Your name printed on the cover</li>
+      <li>A dedication page for your family</li>
+      <li>Six prompts tailored to your own story</li>
+    </ul>
+    <p class="prayer">For my children and grandchildren — so you'll always know that God never once left us.</p>
+    <p class="small-note">(Sample dedication.) Ordering and the personalization questionnaire are not open yet.</p>
+    <a class="btn" href="#guide">Begin with a free story prompt →</a>
+  </div>
+</dialog>
+
+<dialog id="dlg-privacy" aria-labelledby="t-privacy">
+  <button class="close" data-close aria-label="Close">×</button>
+  <div class="m">
+    <p class="eyebrow">Privacy</p>
+    <h2 id="t-privacy">Your words are yours.</h2>
+    <ul style="color:var(--muted);padding-left:1.2em">
+      <li>This site collects no email addresses, payments, or submissions.</li>
+      <li>Reflections are stored only in your browser (localStorage). Export or delete them any time.</li>
+      <li>Fonts are loaded from Google Fonts.</li>
+      <li>Our web host may keep standard access logs.</li>
+      <li>No ads. No analytics. No tracking.</li>
+    </ul>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const store = {
+    get(k){ try { return localStorage.getItem(k); } catch { return null; } },
+    set(k,v){ try { localStorage.setItem(k,v); return true; } catch { return false; } },
+    del(k){ try { localStorage.removeItem(k); return true; } catch { return false; } }
+  };
+
+  // mobile menu
+  const menuBtn = $('#menuBtn'), navList = $('#navList');
+  const setMenu = open => { navList.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', open); menuBtn.textContent = open ? 'Close' : 'Menu'; };
+  menuBtn.addEventListener('click', () => setMenu(!navList.classList.contains('open')));
+  navList.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+
+  // dialogs
+  const openDlg = id => { const d = document.getElementById(id); if (d && !d.open) d.showModal(); };
+  document.addEventListener('click', e => {
+    const o = e.target.closest('[data-open]'); if (o) openDlg(o.dataset.open);
+    const c = e.target.closest('[data-close]'); if (c) c.closest('dialog').close();
+  });
+  document.querySelectorAll('dialog').forEach(d => {
+    d.addEventListener('click', e => { if (e.target === d) d.close(); });
+    d.addEventListener('close', () => { if (location.hash === '#guide' && d.id === 'dlg-guide') history.replaceState(null,'',location.pathname); });
+  });
+  // any link to #guide opens the guide
+  const handleHash = () => {
+    if (location.hash === '#guide') {
+      document.querySelectorAll('dialog[open]').forEach(d => d.id !== 'dlg-guide' && d.close());
+      openDlg('dlg-guide');
+    }
+  };
+  window.addEventListener('hashchange', handleHash);
+  document.addEventListener('click', e => {
+    if (e.target.closest('a[href="#guide"]') && location.hash === '#guide') { e.preventDefault(); handleHash(); }
+  });
+  handleHash();
+
+  // quiet minute timer
+  const TOTAL = 60, C = 502.65;
+  let left = TOTAL, tick = null;
+  const bar = $('#ringBar'), tt = $('#timeText'), br = $('#breath'), tog = $('#timerToggle');
+  const cues = ['Breathe in… “Lord,”', 'Breathe out… “here I am.”'];
+  const render = () => {
+    tt.textContent = `${Math.floor(left/60)}:${String(left%60).padStart(2,'0')}`;
+    bar.style.strokeDashoffset = C * (1 - left/TOTAL);
+  };
+  const stop = () => { clearInterval(tick); tick = null; };
+  tog.addEventListener('click', () => {
+    if (tick) { stop(); tog.textContent = 'Continue'; br.textContent = 'Paused. There’s no hurry.'; return; }
+    if (left === 0) { left = TOTAL; render(); }
+    tog.textContent = 'Pause';
+    br.textContent = cues[0];
+    tick = setInterval(() => {
+      left--; render();
+      br.textContent = cues[Math.floor((TOTAL-left)/5) % 2];
+      if (left <= 0) { stop(); tog.textContent = 'One more minute'; br.textContent = 'Amen. Go in peace.'; }
+    }, 1000);
+  });
+  $('#timerReset').addEventListener('click', () => { stop(); left = TOTAL; render(); tog.textContent = 'Begin quiet minute'; br.textContent = 'Whenever you’re ready, press begin.'; });
+  $('#dlg-quiet').addEventListener('close', () => { if (tick) { stop(); tog.textContent = 'Continue'; br.textContent = 'Paused.'; } });
+  render();
+
+  // daily reflection — question rotates by date
+  const prompts = [
+    'What small kindness has stayed with you lately?',
+    'Where did you notice God’s care for you this week?',
+    'Which hymn or verse has carried you through a hard stretch?',
+    'Who would you like to pray for today, and why them?',
+    'Looking back, which closed door turned out to be a blessing?',
+    'What is the most important thing you learned from a parent or elder?',
+    'What are you most thankful to God for right now?'
+  ];
+  const d = new Date();
+  const dayIndex = Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 864e5) % prompts.length;
+  $('#todayQ').textContent = prompts[dayIndex];
+  const KEY = 'eternalgrace.reflection';
+  const ta = $('#reflectText'), st = $('#reflectStatus');
+  const saved = store.get(KEY);
+  if (saved) { try { const o = JSON.parse(saved); ta.value = o.text || ''; st.textContent = `Loaded your saved reflection (${o.savedAt}).`; } catch {} }
+  const empty = () => { if (!ta.value.trim()) { st.textContent = 'Nothing written yet.'; return true; } };
+  $('#saveBtn').addEventListener('click', () => {
+    if (empty()) return;
+    const savedAt = new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
+    st.textContent = store.set(KEY, JSON.stringify({ text: ta.value, prompt: $('#todayQ').textContent, savedAt }))
+      ? `Saved on this device (${savedAt}).` : 'This browser can’t save right now — try “Export as text” instead.';
+  });
+  $('#exportBtn').addEventListener('click', () => {
+    if (empty()) return;
+    const body = `Eternal Grace Journey · My reflection\n${new Date().toLocaleDateString('en-US', { dateStyle: 'long' })}\n\nQuestion: ${$('#todayQ').textContent}\n\n${ta.value}\n`;
+    const url = URL.createObjectURL(new Blob([body], { type: 'text/plain;charset=utf-8' }));
+    const a = Object.assign(document.createElement('a'), { href: url, download: `my-reflection-${new Date().toISOString().slice(0,10)}.txt` });
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    st.textContent = 'Exported as a text file.';
+  });
+  $('#deleteBtn').addEventListener('click', () => {
+    store.del(KEY); ta.value = ''; st.textContent = 'Your saved reflection was deleted from this device.';
+  });
+
+  // print just the guide
+  $('#printBtn').addEventListener('click', () => { document.body.classList.add('printing'); window.print(); });
+  window.addEventListener('afterprint', () => document.body.classList.remove('printing'));
+})();
+</script>
+</body>
+</html>
